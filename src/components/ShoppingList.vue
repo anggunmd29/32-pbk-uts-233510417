@@ -14,6 +14,10 @@ const addItem = () => {
 const removeItem = (index) => {
   shoppingItems.value.splice(index, 1);
 };
+
+const togglePurchased = (index) => {
+  shoppingItems.value[index].purchased = !shoppingItems.value[index].purchased;
+};
 </script>
 
 <template>
@@ -79,5 +83,13 @@ const removeItem = (index) => {
   border: none;
   cursor: pointer;
   margin-left: auto;
+}
+.item.purchased {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.item input[type="checkbox"] {
+  margin-right: 10px;
 }
 </style>
