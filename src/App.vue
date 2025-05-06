@@ -9,5 +9,4 @@ import ShoppingList from './components/ShoppingList.vue';
   </div>
 </template>
 
-<style src="./style.css"></style>
 
