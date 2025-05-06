@@ -10,10 +10,14 @@ const addItem = () => {
     newItem.value = '';
   }
 };
+
+const removeItem = (index) => {
+  shoppingItems.value.splice(index, 1);
+};
 </script>
 
 <template>
-<div class="shopping-container">
+  <div class="shopping-container">
     <input
       v-model="newItem"
       placeholder="Masukkan item belanja"
@@ -28,7 +32,52 @@ const addItem = () => {
         class="item"
       >
         <span>{{ item.text }}</span>
+        <button @click="removeItem(index)" class="btn-delete">Hapus</button>
       </li>
     </ul>
   </div>
 </template>
+
+<style>
+.shopping-container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.input-field {
+  padding: 8px;
+  width: 70%;
+  margin-right: 10px;
+}
+
+.btn-add {
+  padding: 8px 15px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.item-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.item {
+  padding: 10px;
+  border: 1px solid #ddd;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+}
+.btn-delete {
+  padding: 5px 10px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-left: auto;
+}
+</style>
